@@ -7,6 +7,8 @@ import cors from 'cors';
 import 'dotenv/config';
 import taskRouter from './routes/task';
 import mlRouter from './routes/ml';
+import eventRouter from './routes/event';
+import { verifyAuth } from './middleware';
 
 const app = express();
 const PORT = process.env.BACKEND_PORT || 8080;
@@ -32,3 +34,4 @@ app.use(bodyParser.json());
 // Routes
 app.use('/tasks', taskRouter);
 app.use('/ml', mlRouter);
+app.use('/events', eventRouter);
