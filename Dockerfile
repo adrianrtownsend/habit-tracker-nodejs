@@ -11,10 +11,12 @@ COPY package*.json ./
 RUN npm install
 
 # Copy source code
-COPY . .
+COPY . ./
 
 # Expose port
 EXPOSE 8080
 
+RUN npm run build
+
 # Command to run the application
-CMD ["node", "app.js"]
+CMD ["npm", "run", "start"]
