@@ -21,6 +21,7 @@ export class InstanceService<ServiceParams extends Params = InstanceParams> exte
 export const getOptions = (app: Application): MongoDBAdapterOptions => {
   return {
     paginate: app.get('paginate'),
-    Model: app.get('mongodbClient').then((db) => db.collection('instance'))
+    Model: app.get('mongodbClient').then((db) => db.collection('instance')),
+    multi: true
   }
 }

@@ -4,6 +4,9 @@ import type { TransportConnection, Application } from '@feathersjs/feathers'
 import authenticationClient from '@feathersjs/authentication-client'
 import type { AuthenticationClientOptions } from '@feathersjs/authentication-client'
 
+import { apiKeyClient } from './services/api-key/api-key.shared'
+export type { ApiKey, ApiKeyData, ApiKeyQuery, ApiKeyPatch } from './services/api-key/api-key.shared'
+
 import { instanceClient } from './services/instance/instance.shared'
 export type {
   Instance,
@@ -47,5 +50,6 @@ export const createClient = <Configuration = any,>(
   client.configure(userClient)
   client.configure(taskClient)
   client.configure(instanceClient)
+  client.configure(apiKeyClient)
   return client
 }

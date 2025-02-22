@@ -65,7 +65,7 @@
     "@feathersjs/cli": "^5.0.30",
     "@feathersjs/rest-client": "^5.0.30",
     "@types/mocha": "^10.0.7",
-    "@types/node": "^22.5.4",
+    "@types/node": "^22.10.5",
     "axios": "^1.7.7",
     "cross-env": "^7.0.3",
     "mocha": "^10.7.3",
