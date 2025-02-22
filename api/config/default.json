@@ -9,14 +9,15 @@
     "default": 10,
     "max": 50
   },
-  "mongodb": "mongodb+srv://DbAdminChief:QLCIa3jKiUls4OQ7@habit-tracker-db.actbf.mongodb.net/?retryWrites=true&w=majority&appName=habit-tracker-db",
+  "mongodb": "mongodb+srv://DbAdminChief:QLCIa3jKiUls4OQ7@habit-tracker-db.actbf.mongodb.net/HabitTrackerDb?retryWrites=true&w=majority&appName=habit-tracker-db",
   "authentication": {
     "entity": "user",
     "service": "users",
     "secret": "NVYY4w3M9l2b/ps5yAn1EEFGFXDMTsep",
     "authStrategies": [
       "jwt",
-      "local"
+      "local",
+      "oauth"
     ],
     "jwtOptions": {
       "header": {

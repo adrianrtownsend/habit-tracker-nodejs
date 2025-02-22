@@ -21,6 +21,7 @@ export class TaskService<ServiceParams extends Params = TaskParams> extends Mong
 export const getOptions = (app: Application): MongoDBAdapterOptions => {
   return {
     paginate: app.get('paginate'),
-    Model: app.get('mongodbClient').then((db) => db.collection('task'))
+    Model: app.get('mongodbClient').then((db) => db.collection('task')),
+    multi: true
   }
 }

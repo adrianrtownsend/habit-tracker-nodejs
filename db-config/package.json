@@ -1,0 +1,28 @@
+{
+	"name": "db-config",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev:seed": "nodemon -x ts-node ./src/seeders/index.ts"
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"@feathersjs/authentication-client": "^5.0.31",
+		"@feathersjs/feathers": "^5.0.31",
+		"@feathersjs/rest-client": "^5.0.31",
+		"@feathersjs/socketio-client": "^5.0.31",
+		"dotenv": "^16.4.7",
+		"socket.io-client": "^4.8.1"
+	},
+	"devDependencies": {
+		"@faker-js/faker": "^9.3.0",
+		"@types/node": "^22.5.4",
+		"nodemon": "^3.1.9",
+		"prettier": "^3.4.2",
+		"ts-node": "^10.9.2",
+		"typescript": "^5.7.2"
+	}
+}

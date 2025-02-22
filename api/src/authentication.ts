@@ -24,7 +24,6 @@ class GoogleStrategy extends OAuthStrategy {
     }
   }
 }
-
 export const authentication = (app: Application) => {
   const authentication = new AuthenticationService(app)
 

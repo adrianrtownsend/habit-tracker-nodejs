@@ -17,6 +17,9 @@ import {
 import type { Application } from '../../declarations'
 import { TaskService, getOptions } from './task.class'
 import { taskPath, taskMethods } from './task.shared'
+import { generateInstances } from '../../hooks/generate-instances'
+import { deleteInstances } from '../../hooks/delete-instances'
+import { modifyInstances } from '../../hooks/modify-instances'
 
 export * from './task.class'
 export * from './task.schema'
@@ -40,7 +43,11 @@ export const task = (app: Application) => {
       ]
     },
     before: {
-      all: [schemaHooks.validateQuery(taskQueryValidator), schemaHooks.resolveQuery(taskQueryResolver)],
+      all: [
+        authenticate('jwt'),
+        schemaHooks.validateQuery(taskQueryValidator),
+        schemaHooks.resolveQuery(taskQueryResolver)
+      ],
       find: [],
       get: [],
       create: [schemaHooks.validateData(taskDataValidator), schemaHooks.resolveData(taskDataResolver)],
@@ -48,7 +55,10 @@ export const task = (app: Application) => {
       remove: []
     },
     after: {
-      all: []
+      all: [],
+      create: [generateInstances],
+      remove: [deleteInstances],
+      patch: [modifyInstances]
     },
     error: {
       all: []
